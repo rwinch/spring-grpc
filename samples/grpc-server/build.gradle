@@ -30,11 +30,12 @@ dependencyManagement {
 dependencies {
     implementation 'org.springframework.grpc:spring-grpc-spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'io.grpc:grpc-services'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.grpc:spring-grpc-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.grpc:spring-grpc-test-spring-boot-autoconfigure'
+	testImplementation 'io.grpc:grpc-inprocess'
     testRuntimeOnly "io.netty:netty-transport-native-epoll::linux-x86_64"
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 test {
