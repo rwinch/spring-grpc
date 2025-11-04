@@ -43,7 +43,12 @@ public class GrpcClientApplicationTests {
 			return CommonsExecWebServerFactoryBean.builder()
 				.classpath(classpath -> classpath
 					.entries(new MavenClasspathEntry("org.springframework.grpc:grpc-server-sample:1.0.0-SNAPSHOT"))
-					.files("target/test-classes"));
+					.files("./samples/grpc-client/target/test-classes"))
+						.debug((settings) -> settings
+								.enabled(true)
+								.suspend(false)  // Dave - set this to true if you care to debug w/ suspend
+								.port(5005)
+				);
 		}
 
 		@Bean
