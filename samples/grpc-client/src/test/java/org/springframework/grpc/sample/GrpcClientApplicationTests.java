@@ -41,14 +41,15 @@ public class GrpcClientApplicationTests {
 		@DynamicProperty(name = "local.grpc.port", value = "port")
 		static CommonsExecWebServerFactoryBean grpcServer() {
 			return CommonsExecWebServerFactoryBean.builder()
+					.useRandomPort(true)
 				.classpath(classpath -> classpath
 					.entries(new MavenClasspathEntry("org.springframework.grpc:grpc-server-sample:1.0.0-SNAPSHOT"))
-					.files("./samples/grpc-client/target/test-classes"))
-						.debug((settings) -> settings
-								.enabled(true)
-								.suspend(false)  // Dave - set this to true if you care to debug w/ suspend
-								.port(5005)
-				);
+					.entries(MavenClasspathEntry.springBootDependency("spring-boot-web-server"))
+					.files("target/test-classes"))
+				.debug((settings) -> settings.enabled(true)
+					.suspend(false) // Dave - set this to true if you care to debug w/
+									// suspend
+					.port(5005));
 		}
 
 		@Bean

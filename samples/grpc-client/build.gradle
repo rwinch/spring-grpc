@@ -31,7 +31,7 @@ dependencies {
 	implementation 'org.springframework.grpc:spring-grpc-client-spring-boot-starter'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.experimental.boot:spring-boot-testjars-maven:0.0.3'
+	testImplementation 'org.springframework.experimental.boot:spring-boot-testjars-maven:0.4.0.0-SNAPSHOT'
 	testImplementation 'org.springframework.grpc:spring-grpc-test-spring-boot-autoconfigure'
 	testImplementation 'io.grpc:grpc-inprocess'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
