@@ -53,6 +53,7 @@ public class DefaultDeadlineSetupTests {
 				return CommonsExecWebServerFactoryBean.builder()
 					.classpath(classpath -> classpath
 						.entries(new MavenClasspathEntry("org.springframework.grpc:grpc-server-sample:1.0.0-SNAPSHOT"))
+						.entries(MavenClasspathEntry.springBootDependency("spring-boot-web-server"))
 						.files("target/test-classes"));
 			}
 
@@ -101,6 +102,7 @@ public class DefaultDeadlineSetupTests {
 				return CommonsExecWebServerFactoryBean.builder()
 					.classpath(classpath -> classpath
 						.entries(new MavenClasspathEntry("org.springframework.grpc:grpc-server-sample:1.0.0-SNAPSHOT"))
+						.entries(MavenClasspathEntry.springBootDependency("spring-boot-web-server"))
 						.files("target/test-classes"));
 			}
 
